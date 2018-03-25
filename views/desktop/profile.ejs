@@ -1,0 +1,75 @@
+   
+   <style>
+       .message_user {
+           padding: 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #0d47a1;
+            color: #fff!important;
+            cursor:pointer;
+            outline:none;
+           
+       }
+     
+   </style>
+   
+    <div class="profile-sec1">
+            <div class="sec1-sub1">
+               <p><%= userFound.first_name +' '+ userFound.last_name%></p>
+                <input type="hidden" value="<%= userFound.username%>" id="display_users_post">
+                <% if( JSON.stringify(userFound._id) !== JSON.stringify(user._id) ) { %>
+                <form>
+                    <a href="/message/<%= userFound._id%>" class="message_user">
+                           Message 
+                    </a>
+                 </form>
+                 <% } %>
+            </div>
+            <div class="sec1-sub2">
+                <img src="<%=userFound.photo%>">
+            </div>
+     </div>
+        <div class="profile-menus" id="profile-menus">
+            <a id="feed" class="selected">feed</a>
+        </div>
+        
+        
+      
+<div id="columns" class=".columns"></div>
+<div style="text-align:center;display:none;">
+    <img id="loading" src="https://m.popkey.co/fe4ba7/DYALX.gif" style="max-width:180px;">
+</div>
+<input value="<%= user._id%>" name="userLoggedinId" id="userLoggedinId" type="hidden">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     
+     
+     
+<script>
+
+$(document).ready(function() {
+         
+
+        $('#loading').show();
+ 
+          var display_users_post = $("#display_users_post").val();
+          $.ajax({
+            url: '/profile/'+ display_users_post,
+            type: "post",
+            cache:false,
+            success: function(data) {
+                data.forEach(function(content){
+                  // console.log(content.postedBy._id);
+                    var html = '';
+                  html += '<figure id="figure' + content._id + '"><img src="' + content.postImage + '" id="'+ content._id +'" class="uploaded_img">';
+                  html += ' </figure>';
+                  $("#columns").append(html);
+                  $('#loading').hide();
+                  // console.log(content);
+                });
+               
+            }
+        });
+     
+});
+</script>

@@ -1,0 +1,649 @@
+#howitworks{
+  display: none;
+}
+
+
+#login-signup-container{
+      z-index: 1;
+      top: 15vh;
+      position: relative;
+      margin:0 auto;
+      width: 400px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+
+}
+
+#login-signup-container h5 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: #424242  ;
+    font-size: 23px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+#login-signup-container .or{
+    font-family: 'Open Sans', sans-serif;
+    
+    color:#555;
+}
+
+#login-signup-container .exf-text{
+    font-family: 'Open Sans', sans-serif;
+    color: #757575 ;
+}
+
+
+ /* begin social button styles*/
+
+
+/* ////end social button styles*/
+
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://images.pexels.com/photos/247298/pexels-photo-247298.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb); 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://iso.500px.com/wp-content/uploads/2014/12/fashion_1.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://static1.squarespace.com/static/56c2a124859fd0898f832ec9/t/59c9c0c5a9db098f1fee8d6c/1506394334792/work+life+balance);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://files.fashiontv.com/wp-content/uploads/2017/09/ftv-paris-horisontal-big-2048x1152.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://images.pexels.com/photos/756914/pexels-photo-756914.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+
+
+#footer{
+    z-index:1;
+    position:relative;
+    top:20vh;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#footer a {
+    color:#fff;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    font-size:12px;
+
+}
+
+
+#footerLogin{
+    z-index:1;
+    position:relative;
+    top:30vh;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#footerLogin a {
+    color:#fff;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    font-size:12px;
+
+}
+
+
+#loginbtndiv {
+    z-index:1;
+    position:relative;
+    float: right;
+    top:10px;
+    padding: 20px;
+}
+
+#loginbtndiv button{
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#signupbtndiv {
+    z-index:1;
+    position:relative;
+    float: right;
+    top:10px;
+    padding: 20px;
+}
+
+#signupbtndiv button{
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+
+#round-border{
+    z-index:1;
+    position:relative;
+    width: 20%;
+    float: right;
+    right: 25vh;
+    bottom: 150px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 10%;
+    min-height: 250px;
+    padding: 20px;
+    background-color: rgb(189, 8, 28);
+    padding: 10px;
+    text-align: left;
+    
+}
+
+#round-border #content {
+    color: #fff;
+    padding: 25px;
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+#round-border #content p {
+    font-family: Helvetica Neue,Helvetica,\\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3,Hiragino Kaku Gothic Pro,\\30E1\30A4\30EA\30AA,Meiryo,"\FF2D\FF33 \FF30\30B4\30B7\30C3\30AF",arial,sans-serif;
+    word-spacing: -1.3px;
+    letter-spacing: -.3px;
+    line-height: 23px;
+    font-size: 21px;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+    
+}
+
+#round-border #content button:hover{
+    background-color: #e0e0e0 ;
+    color: #000;
+    
+}
+
+.menu{
+    position: fixed;
+    width: 100%;
+    font-size: 14px;
+    background-color: #fff;
+    height: 46px;
+    line-height: 46px;
+    z-index: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.menu-group{
+    width: 92.3%;
+    max-width: 960px;
+    margin: auto;
+}
+
+.menu-group a{
+    font-family: 'Open Sans', sans-serif;
+    visibility: inherit;
+    margin-right: 24px;
+    display: inline;
+    padding: 2px;
+    color: #000;
+    font-weight: 600;
+    font-size: 13px;
+    
+
+}
+
+.menu-group a:hover{
+  border-bottom: 2px solid #bdbdbd ;
+  text-decoration: none;
+  color: #000;
+  
+  
+}
+
+.bg {
+    position: relative;
+    height: calc(100% - 46px);
+    min-height: 720px;
+    overflow: hidden;
+    
+  
+}
+
+.bg-video-wrapper {
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    min-width: 177.77778vh;
+    height: 100vh;
+    max-height: 200vw;
+    min-height: 60vw;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.bg-overlay {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-headline {
+    font-weight: 700;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.bg-headline h1 {
+    color: #fff;
+    font-size: 71px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.bg-headline p {
+    font-weight: 400;
+    font-size: 23px;
+    color: #fff;
+    letter-spacing: 0;
+    width: 670px;
+
+}
+.bg-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    padding: 0 10%;
+}
+
+.bg-action {
+  float: right;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+
+.button-transparent {
+    background-color: transparent;
+    color: #fff!important;
+    border: 2px solid #fff;
+}
+
+.button-pill {
+    border-radius: 50px;
+    padding: 13px 26px;
+}
+
+.button:hover{
+  border-color: #fffc00;
+  color: #fffc00!important;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .125em;
+    line-height: 1.58333;
+    min-width: 140px;
+    padding: 11px 26px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section1-types-title {
+    text-align: center;
+    margin-bottom: 55px;
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.section1-title{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 50px;
+    letter-spacing: -1.2px;
+}
+
+.section1-product-container {
+    max-width: 865px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.product-type {
+    display: inline-block;
+    margin: 0 1.5%;
+    max-width: 255px;
+    width: 30%;
+    height: 460px;
+}
+
+.product-type .tile {
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 3px 4px 12px 0 rgba(0,0,0,0.17);
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 345px;
+    position: relative;
+}
+
+.product-type .tile:hover {
+    
+    box-shadow: 2px 2px 9px 0 rgba(0,0,0,0.13);
+}
+
+
+
+.product-type .tile .icon-product1 {
+    background-image: url("http://killorglinrowing.files.wordpress.com/2012/02/fashionshowkillorglinrc.png");
+    background-size: 192px 165px;
+}
+
+.product-type .tile .icon-product2 {
+    background-image: url("http://www.clker.com/cliparts/x/b/6/A/Q/G/fashion-hi.png");
+    background-size: 192px 165px;
+}
+
+
+.product-type .tile .icon-product3 {
+    background-image: url("http://killorglinrowing.files.wordpress.com/2012/02/fashionshowkillorglinrc.png");
+    background-size: 192px 165px;
+}
+
+
+
+.product-type .tile .icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 190px;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+}
+
+.product-type .tile .bottom {
+    bottom: 0;
+    color: #000;
+    padding: 38px 30px;
+    position: absolute;
+    height: 154px;
+}
+
+.product-type .tile .bottom .name {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.product-type .tile .bottom .description {
+      font-size: 14px;
+}
+
+.product-type .button-container {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.product-type .button {
+    font-size: 14px;
+    text-transform: none;
+    color: #000!important;
+}
+
+.button-secondary, .button-secondary-yellow {
+    background-color: #fff;
+    color: #262626;
+    border: 2px solid #ddd;
+}
+
+.section-yellow-pattern {
+  background-image: url(https://www.snapchat.com/images/yellow-background_2x.jpg);
+  background-size: 1928px 665px;
+}
+
+.section-yellow-pattern {
+  background-image: url(https://www.snapchat.com/images/yellow-background_2x.jpg);
+  background-position: center;
+  
+}
+
+.section2-container {
+    height: 385px;
+    width: 100%;
+    max-width: 865px;
+    margin: 0 auto;
+    padding: 50px 1em 0;
+    position: relative;
+}
+
+
+.section2-container .phone.right {
+    right: 0;
+}
+
+
+.section2-container .phone {
+    background: url(https://www.snapchat.com/images/white_phone.svg) top center no-repeat;
+    background-size: auto 100%;
+    height: 640px;
+    width: 322px;
+    position: absolute;
+    top: -40px;
+}
+
+.section2-container .phone .image, .section2-container .phone .image.img-1 {
+    background-image: url("https://static1.squarespace.com/static/5672d4932399a31f1156c920/587831cee3df288f87d23758/587831cec534a5ef66e77885/1484272094392/Sibling-FW17-London-2848.jpg");
+    background-size: 258px 443px;
+
+}
+
+
+
+.section2-container .phone .image {
+    background-repeat: no-repeat;
+    height: 443px;
+    width: 258px;
+    position: absolute;
+    top: 75px;
+    left: 32px;
+}
+
+.section2-container .content {
+    display: inline-block;
+    width: 65%;
+    max-width: 354px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.section2-container .content .product {
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-bottom: 5px;
+}
+
+.section2-container .content .description {
+    font-size: 16px;
+    line-height: 29px;
+}
+
+.section2-container .content .button-container {
+      margin-top: 26px;
+}
+
+
+.section2-container .content .button {
+  text-transform: none;
+}
+
+.button-pink {
+      background-color: #F23C57;
+      color: #fff;
+}
+
+.button-pink:hover {
+      background-color: #F23C57;
+      color: #fff!important;
+}
+
+.section2-container.wrap {
+      height: 600px;
+
+}
+
+.section2-container.wrap .phone {
+    top: 0;
+}
+
+.section2-container .phone .image, .section2-container .phone .image.img-2 {
+    background-image: url("https://en.vogue.fr/uploads/images/thumbs/201710/20/_umb3175_jpg_843_north_326x488_white.jpg");
+    background-size: 258px 443px;
+
+}
+
+.section2-container .content.right {
+    padding-top: 100px;
+    padding-right: 0;
+    position: absolute;
+    right: 0;
+}
+
+.section4 {
+    background-color: #38C88A;
+    color: #fff;
+}
+
+.section2-container .phone .image, .section2-container .phone .image.img-3 {
+    background-image: url("https://data.whicdn.com/images/63321202/original.jpg");
+    background-size: 258px 443px;
+
+}
+
+.color:hover {
+  color: #000!important;
+}
+
+.section2-container .button-container .c:hover {
+  color:#000!important;
+}
+
+.footer-bottom-bar{
+    width: 92.3%;
+    max-width: 960px;
+    margin: auto;
+    
+}
+
+.footer-bottom-bar a {
+    line-height: 56px;
+    margin-right: 40px;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.footer-bottom-bar a:hover {
+    
+    color: #fff;
+    text-decoration: none;
+}
+

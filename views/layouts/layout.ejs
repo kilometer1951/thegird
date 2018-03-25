@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title><%= title%></title>
+      <link rel="stylesheet" href="/stylesheets/main.css">
+      <link rel="stylesheet" href="/stylesheets/emojionearea.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+<style>
+    #feed_des {
+     width:340px;
+     outline:none;
+     resize:none;
+     border-radius:2px;
+     height:150px;
+     padding:5px;
+    }
+   
+</style>
+
+    </head>
+<body>
+    <div class="menu" id="menu">
+           <div class="search">
+              <div class="logo" id="logo" style="cursor:pointer;">The Grid</div>
+               <form class="search-form">
+                  <input type="text" name="search" placeholder="Search">
+                </form>
+             </div>
+            <div class="menu-icons">
+               <div>
+                   <a href="/">Home</a>
+               </div>
+               <!--<div>-->
+               <!--    <a href="/">Explore</a>-->
+               <!--</div>-->
+               <div>
+                   <a href="/profile/<%= user.username%>"><i class="far fa-user" style="padding-right:10px;"></i><%= user.first_name%></a>
+               </div>
+               <div>
+                   <a href="/message/newMessage"><i class="far fa-comment-alt" ></i></a>
+               </div>
+               
+               <div>
+                   <a id="dropdownbtn"><i class="fas fa-chevron-circle-down"></i></a>
+               </div>
+            </div>
+    </div>
+                   <div class="dropdown-menu">
+                       <div class="dropdown-menu-header" id="dropdown-menu-header">
+                           <span><i class="fas fa-cogs"></i> Settings</span>
+                       </div>
+                       <div class="dropdown-menu-body" id="dropdown-menu-body">
+                           <!--<div class="menu-body-segment">-->
+                           <!--    <span>Groups</span>-->
+                           <!--</div>-->
+                           <!--<div class="menu-body-segment">-->
+                           <!--    <span>Gallery</span>-->
+                           <!--</div>-->
+                          
+                           <!--<div class="menu-body-segment" id="menu_body_segment_fav">-->
+                           <!--    <span>Favorite </span>-->
+                           <!--</div>-->
+                           <!--<div class="menu-body-segment">-->
+                           <!--    <span>My Courses </span>-->
+                           <!--</div>-->
+                           <!-- <div class="menu-body-segment" id="menu_body_segment_fc">-->
+                           <!--    <span>Fashion Channel</span>-->
+                           <!--</div>-->
+                            <div class="menu-body-segment">
+                               <span>Terms and Privacy</span>
+                           </div>
+                       </div>
+                       <div class="dropdown-menu-footer logoutDiv" id="dropdown-menu-footer">
+                           <span><i class="fas fa-sign-out-alt"></i> Log out</span>
+                       </div>
+                   </div>
+                   
+                   
+                  <!--Messages-->
+                  <!--  <div class="message" id="message">-->
+                  <!--     <div class="message-sec1">-->
+                  <!--         <button class="message-close-div" id="message_close_div">X</button><br><br>-->
+                  <!--         <button class="message-back" id="message_back"> <i class="fas fa-long-arrow-alt-left"></i> back</button>-->
+                  <!--         <a href="/message">All Messages</a>-->
+                  <!--             <form>-->
+                  <!--                 <input type="text" placeholder="Search Users" id="search_users">-->
+                  <!--             </form>-->
+                  <!--     </div>-->
+                       <!--<div class="message-sec2" id="message_sec2">-->
+                       <!--    <div class="message-users" id="message_users">-->
+                       <!--        <img src="https://www.alvinailey.org/sites/default/files/styles/slideshow_image/public/melanie-person.jpg?itok=ocw3xkx_"><br>-->
+                       <!--        <span id="name_of_user">serge Wilson</span><br><br>-->
+                       <!--        <div style="padding:0.5px;background-color:#eeeeee;margin-top:5px;margin-bottom:10px;"></div>-->
+                       <!--    </div><br>-->
+                       <!--     <div class="message-users" id="message_users">-->
+                       <!--        <img src="https://www.alvinailey.org/sites/default/files/styles/slideshow_image/public/melanie-person.jpg?itok=ocw3xkx_"><br>-->
+                       <!--        <span id="name_of_user">Shalo Louis</span><br><br>-->
+                       <!--        <div style="padding:0.5px;background-color:#eeeeee;margin-top:5px;margin-bottom:10px;"></div>-->
+                       <!--    </div><br>-->
+                       <!--    <div class="message-users" id="message_users">-->
+                       <!--        <img src="https://www.alvinailey.org/sites/default/files/styles/slideshow_image/public/melanie-person.jpg?itok=ocw3xkx_" id="message_sec2_img"><br>-->
+                       <!--        <span id="name_of_user">Mbensie Joyce</span><br><br>-->
+                       <!--        <div style="padding:0.5px;background-color:#eeeeee;margin-top:5px;margin-bottom:10px;" id="line"></div>-->
+                       <!--    </div><br>-->
+                       <!--</div>-->
+                  <!--     <div class="message-sec3" id="message_sec3">-->
+                  <!--         <img src="" id="userTomessage_img" style=""><br>        -->
+                  <!--         <span id="userToMessageName"></span>-->
+                  <!--         <div style="margin-top:40px;">-->
+                  <!--             <form>-->
+                  <!--                 <textarea placeholder="Hit enter to send a message when done"></textarea>-->
+                  <!--             </form>-->
+                  <!--         </div>-->
+                  <!--     </div>-->
+                  <!-- </div>-->
+                  <!--End Messages-->
+        
+        <div class="action-buttons">
+            <div class="newMessage-div">
+                <button class="newMessage" id="newMessage"><i class="far fa-comment fa-2x"></i></button>
+                <span class="tooltiptext1">New Message</span>
+            </div><br><br>
+            <div class="upload-div">
+                <button class="upload" id="upload"><i class="fas fa-plus fa-2x"></i></button>
+                <span class="tooltiptext2">Upload Images</span>
+            </div><br><br>
+            <!--<div class="livestream-div">-->
+            <!--    <button class="stream-btn"><i class="fas fa-video fa-2x"></i></button>-->
+            <!--    <span class="tooltiptext3">Go Live</span>-->
+            <!--</div>-->
+       </div>
+       
+       	<!-- The Modal -->
+      <div id="myModal_upload" class="modal_upload">
+        <!-- Modal content -->
+        <div class="modal-content_upload">
+          <div class="modal-header_upload">
+            <span class="close_modalupload">&times;</span><br>
+            <h2>Create Grid</h2>
+          </div>
+          <form id="fileUploadForm">
+              <div class="modal-body_upload">
+                <div class="body-sec1_upload">
+                  <div id="click_to_upload" class="click_to_upload">
+                      <i class="far fa-images fa-2x" style=" padding-top:80px;"></i>
+                      <p>Drag and drop or click to upload</p>
+                  </div>
+                  <img src="" id="mySelectedImage">
+                  <input type="file" name="fileupload" id="fileupload" accept="image/gif, image/jpeg, image/png" style="display:none;"> 
+                </div>
+                <div class="body-sec2_upload">
+                  <textarea placeholder="Say something interesting" id="feed_des" name="feed_des"></textarea>
+                </div>
+              </div>
+              <div class="modal-footer_upload">
+                
+                  <button id="upload_feedData" style="display:none;">Done</button>
+                
+              </div>
+          </form>
+        </div>
+      </div>
+       
+<%- body %>
+
+<div id="toastBar">Upload Successful</div>
+
+<style>
+    .post_notif {
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #fafafa  ;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 87%;
+    bottom: 10px;
+    float:right;
+    font-size: 17px;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    }
+    
+    .view_feed_Modal {
+        padding:20px;
+        background-color:#f5f5f5 ;
+       
+    }
+    .view_feed_Modal .view_section1 {
+        margin: 0px auto;
+        background-color:#fff;
+        width:60%;
+        border-radius:10px;
+        margin-bottom:40px;
+    }
+    
+    
+    .view_feed_Modal .view_section1 .c {
+        padding:20px;
+    }
+     .c_1 {
+        padding:20px;
+        width: 60%;
+        margin:auto;
+    }
+    .view_feed_Modal .back_modal{
+        border:none;
+        border-radius: 5px;
+        padding:10px;
+        cursor:pointer;
+        position:fixed;
+    }
+    .in {
+        width:100%;
+        height:40px;
+    }
+    .in input {
+        width:97%;
+        border-radius:5px;
+        outline:none;
+        height:20px;
+        padding-left:20px;
+        font-size:15px;
+        height:100%;
+        border:none;
+    }
+    .del_com {
+        float:right;
+        color:#e0e0e0;
+    }
+    .del_com:hover {
+        color:#9e9e9e;
+        cursor:pointer;
+    }
+    .c_1 img {
+        width:100px;
+        height:100px;
+        border-radius:50%;
+        float:left;
+        margin-right:10px;
+    }
+    .c_1 a {
+        text-decoration:none;
+    }
+</style>
+
+<div id="post_notifications" style="display:none;"></div>
+
+
+<!--Modal-->
+<div class="view_feed_Modal" id="view_feed_Modal" style="display:none;">
+    <button id="back_modal" class="back_modal"><i class="fas fa-long-arrow-alt-left"></i> Back</button>
+    <div style="text-align:center;display:none;" id="loading_modal">
+        <img  src="https://m.popkey.co/fe4ba7/DYALX.gif" style="max-width:180px;">
+    </div>
+    <div class="view_section1">
+        <div class="i" id="i"></div>
+        <div style="padding-left:20px;padding-top:10px;">
+            <span id="post_belongs_to"></span>
+            <span style="float:right;color:#bdbdbd;padding-right:10px;" id="time_post"></span>
+        </div>
+        <div class="c">
+            <span style="padding-right:20px;cursor:pointer;" id="comment_Num"></span>
+            <span  style="color:#01579b;cursor:pointer;" id="" class="likeBtn"><i class="far fa-heart"></i> <span id="likeNum"></span> <span id="like_text"> like</span></span>
+        </div>
+        <div class="in">
+            <form>
+                <input type="text" placeholder="Enter a comment" id="comment_text" class="comment_text" name="comment_text" autocomplete="off">
+                <button id="submit_comment" style="display:none;">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="c_1" id="c_1"></div>
+    <img src="<%= user.photo%>" style="display:none;" id="users_photo">
+    <input type="hidden" value="<%= user.first_name%>" id="users_first_name">
+    <input type="hidden" value="<%= user.username%>" id="users_username">
+    <input type="hidden" value="<%= user._id%>" id="users_id">
+    
+</div>
+
+      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/grid.js"></script>
+      <script src="/js/post.js"></script>
+      <!--<script src="/js/infiniteScroll.js"></script>-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+      <script type="text/javascript" src="/js/iscroll.js"></script>
+
+      <script type="text/javascript">
+  
+
+        
+        //upload image
+        //trigger click event of file input on click on div and image
+        //perform a click operation as if post_img was clicked
+        //1. div
+          $("#click_to_upload").click(function(e){
+           e.preventDefault();
+           $("#fileupload").trigger('click');
+          });
+          //2. image
+           $("#mySelectedImage").click(function(e){
+           e.preventDefault();
+           $("#fileupload").trigger('click');
+          });
+          
+        var imageLoader = document.getElementById('fileupload');
+            imageLoader.addEventListener('change', handleImage, false);
+        
+        function handleImage(e) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                $('#mySelectedImage').attr('src',event.target.result);
+                $("#mySelectedImage").css("display","block");
+                $("#click_to_upload").css("display","none");
+                $("#upload_feedData").css("display","block");
+            }
+            reader.readAsDataURL(e.target.files[0]);
+            
+            
+        }
+        
+        //drag and drop event handling
+        //1 on div
+        var dropbox_div;
+        dropbox_div = document.getElementById("click_to_upload");
+        dropbox_div.addEventListener("dragenter", dragenter, false);
+        dropbox_div.addEventListener("dragover", dragover, false);
+        dropbox_div.addEventListener("drop", drop, false);
+        //2 om image
+        var dropbox_image;
+        dropbox_image = document.getElementById("mySelectedImage");
+        dropbox_image.addEventListener("dragenter", dragenter, false);
+        dropbox_image.addEventListener("dragover", dragover, false);
+        dropbox_image.addEventListener("drop", drop, false);
+        
+        function dragenter(e) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
+        
+        function dragover(e) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
+        
+        function drop(e) {
+          e.stopPropagation();
+          e.preventDefault();
+          //you can check e's properties
+          //console.log(e);
+          var dt = e.dataTransfer;
+          var files = dt.files;
+          
+          //this code line fires your 'handleImage' function (imageLoader change event)
+          imageLoader.files = files;
+        }
+        
+       
+      </script>
+     
+    </body>
+</html>

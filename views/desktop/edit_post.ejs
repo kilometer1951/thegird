@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title><%= title%></title>
+      <link rel="stylesheet" href="/stylesheets/main.css">
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+<style>
+  body {
+      background-color: #eeeeee;
+  }
+   
+</style>
+
+    </head>
+<body>
+       <h1 style="text-align:center;"><b><u>Edit Post</u></b></h1>
+       <form action="/editPost/<%=foundPost._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+          <div class="editBody" id="editBody">
+            <div class="uploadArea">
+              
+              <img src="<%=foundPost.postImage%>" id="mySelectedImage">
+              <input type="file" name="fileupload" id="fileupload" accept="image/gif, image/jpeg, image/png" style="display:none;"> 
+            </div>
+            <div class="feedTextDiv" class="feedTextDiv">
+              <textarea placeholder="Say something interesting" id="feed_des" name="feed_des" class="feed_des"><%=foundPost.postText%></textarea>
+            </div>
+          </div>
+          <div id="editDone" class="editDone">
+              <button id="editFeedData"><i class="fas fa-pencil-alt" type="submit"></i> Edit</button>
+              <a id="cancelEdit" class="cancelEdit" href="/"><i class="fas fa-ban"></i> Cancel</a>
+          </div>
+             
+        </form>
+
+      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <script type="text/javascript">
+  
+       
+        
+        //upload image
+        //trigger click event of file input on click on div and image
+        //perform a click operation as if post_img was clicked
+          $("#feed_des").keypress(function(e){
+                 $("#editFeedData").css("display","block");
+           });
+          
+           
+           $("#mySelectedImage").click(function(e){
+               e.preventDefault();
+               $("#fileupload").trigger('click');
+           });
+          
+        var imageLoader = document.getElementById('fileupload');
+            imageLoader.addEventListener('change', handleImage, false);
+        
+        function handleImage(e) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                $('#mySelectedImage').attr('src',event.target.result);
+                $("#mySelectedImage").css("display","block");
+                $("#editFeedData").css("display","block");
+            }
+            reader.readAsDataURL(e.target.files[0]);
+            
+            
+        }
+        
+        //drag and drop event handling
+        
+        //2 om image
+        var dropbox_image;
+        dropbox_image = document.getElementById("mySelectedImage");
+        dropbox_image.addEventListener("dragenter", dragenter, false);
+        dropbox_image.addEventListener("dragover", dragover, false);
+        dropbox_image.addEventListener("drop", drop, false);
+        
+        function dragenter(e) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
+        
+        function dragover(e) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
+        
+        function drop(e) {
+          e.stopPropagation();
+          e.preventDefault();
+          //you can check e's properties
+          //console.log(e);
+          var dt = e.dataTransfer;
+          var files = dt.files;
+          
+          //this code line fires your 'handleImage' function (imageLoader change event)
+          imageLoader.files = files;
+        }
+        
+       
+      </script>
+     
+    </body>
+</html>

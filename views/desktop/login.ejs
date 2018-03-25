@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup || Log in</title>
+        <link rel="stylesheet" href="/stylesheets/login.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+ <style>
+        .error {
+            padding:5px;
+            margin-bottom:10px;
+            background-color:#ff4444;
+            border-radius:5px;
+            color:#fff;
+        }
+    </style>
+
+    </head>
+    <body id="body">
+           
+             <div id="login-container">
+                 <h5>Log in to see more</h5>
+                 <p class="text-center exf-text">Explore fashion</p>
+                 <form action="/login" method="POST">
+                      <% if( error && error.length > 0 ){ %>
+                          <div class="error" id="error">
+                             <p class="text-center" style="padding-top:10px;"><%= error%></p>
+                           </div>
+                      <% } %>
+                     <div class="row">
+                         <div class="col-md-12">
+                             <div class="form-gorup">
+                                 <input type="email" class="form-control" placeholder="Email" required name="email"><br>
+                             </div>
+                         </div>
+                         <div class="col-md-12">
+                             <div class="form-gorup">
+                                 <input  type="password" class="form-control" placeholder="Password" required name="password"><br>
+                             </div>
+                         </div>
+                         <div class="col-md-12">
+                                 <div class="form-gorup">
+                                   <input  type="submit" class="btn btn-primary  form-control" value="Log in">
+                                    <br><br><p class="text-center or">OR</p>
+                                     <div class="text-center">
+                                          <a class="btn btn-block btn-social btn-facebook btn-lg" href="/auth/facebook">
+                                              <i class="fab fa-facebook-f" style="padding-top:10px;"></i> Continue with Facebook
+                                            </a>
+                                            <a class="btn btn-block btn-social btn-google btn-lg" href="/auth/google">
+                                              <i class="fab fa-google" style="padding-top:10px;"></i> Continue with Google
+                                            </a><br>
+                                     </div>
+                                 </div>
+                         </div>
+                         <div class="col-md-12 text-center">
+                             <div class="bottom-container">
+                                 <a href="/">Forgot your password?</a><br>
+                                 <a href="/">Are you a bussiness? <span> <b>Get started here</b></span></a><hr>
+                                 <a href="/signup">Not yet on the Grid? <span style="padding-left:5px;"> <b>Signup</b></span></a>
+                             </div>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+            
+    </body>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- js file-->
+<script>
+
+    $(document).ready(function(){
+   //focus mouse pointer on first name
+   $('#fname').focus();
+  
+   
+  
+   $('#signupbtn').on('click', function(){
+      window.location.href = "/";
+   });
+   
+ 
+  
+
+});
+</script>
+
+
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Name Of User</title>
+      <link rel="stylesheet" href="/stylesheets/main.css">
+      <link rel="stylesheet" href="/stylesheets/emojionearea.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+    </head>
+<body>
+    <div class="menu" id="menu">
+           <div class="search">
+              <div class="logo">The Grid</div>
+               <form class="search-form">
+                  <input type="text" name="search" placeholder="Search">
+                </form>
+             </div>
+            <div class="menu-icons">
+               <div>
+                   <a href="/">Home</a>
+               </div>
+               <div>
+                   <a href="/">Explore</a>
+               </div>
+               <div>
+                   <a href="/profile"><i class="far fa-user" style="padding-right:10px;"></i>User Name</a>
+               </div>
+               <div>
+                   <a href="/"><i class="far fa-comment-alt" ></i></a>
+               </div>
+               <div>
+                   <a href="/"><i class="far fa-bell" ></i></a>
+               </div>
+               <div>
+                   <a id="dropdownbtn"><i class="fas fa-chevron-circle-down"></i></a>
+               </div>
+            </div>
+    </div>
+                   <div class="dropdown-menu">
+                       <div class="dropdown-menu-header" id="dropdown-menu-header">
+                           <span><i class="fas fa-cogs"></i> Settings</span>
+                       </div>
+                       <div class="dropdown-menu-body" id="dropdown-menu-body">
+                           <div class="menu-body-segment">
+                               <span>Groups</span>
+                           </div>
+                           <div class="menu-body-segment">
+                               <span>Gallery</span>
+                           </div>
+                           <div class="menu-body-segment">
+                               <span>Talents </span>
+                           </div>
+                           <div class="menu-body-segment">
+                               <span>Streams</span>
+                           </div>
+                           <div class="menu-body-segment" id="menu_body_segment_fav">
+                               <span>Favorite </span>
+                           </div>
+                           <div class="menu-body-segment">
+                               <span>My Courses </span>
+                           </div>
+                            <div class="menu-body-segment">
+                               <span>Fashion Channel</span>
+                           </div>
+                            <div class="menu-body-segment">
+                               <span>Terms and Privacy</span>
+                           </div>
+                       </div>
+                       <div class="dropdown-menu-footer" id="dropdown-menu-footer">
+                           <span><i class="fas fa-sign-out-alt"></i> Log out</span>
+                       </div>
+                   </div>
+
+        
+        <div class="action-buttons">
+            <div class="newMessage-div">
+                <button class="newMessage" id="newMessage"><i class="far fa-comment fa-2x"></i></button>
+                <span class="tooltiptext1">Message</span>
+            </div><br><br>
+            <div class="upload-div">
+                <button class="upload" id="upload"><i class="fas fa-plus fa-2x"></i></button>
+                <span class="tooltiptext2">Upload Images</span>
+            </div><br><br>
+            <div class="livestream-div">
+                <button class="stream-btn"><i class="fas fa-video fa-2x"></i></button>
+                <span class="tooltiptext3">Go Live</span>
+            </div>
+       </div>
+       
+       	<!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span><br>
+            <h2>Create Grid</h2>
+          </div>
+          <div class="modal-body">
+            <div class="body-sec1">
+              <i class="far fa-images fa-2x" style=" padding-top:50px;"></i>
+              <p>Drag and drop or click to upload</p>
+            </div>
+            <div class="body-sec2">
+              <textarea placeholder="Say something interesting" id="feed_des"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <form>
+              <button>Done</button>
+            </form>
+          </div>
+        </div>
+      </div>
+       
+      

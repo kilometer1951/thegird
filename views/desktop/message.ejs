@@ -1,0 +1,282 @@
+<style>
+    .message-page {
+        width:100%;
+        height:90vh;
+        margin-top:70px;
+    }
+    
+    .message-convo-div {
+        background-color:#fff;
+        height:100%;
+        width:25%;
+        overflow-x:hidden;
+        overflow-y:auto;
+        margin-left:30px;
+        display:inline-block;
+        float:left;
+    }
+    
+    .message-convos {
+        margin:0px;
+       
+    }
+     
+    
+    .convo-column .convo-newMessage {
+        float:right;
+        background-color:#e65100 ;
+        border-radius:50%;
+        padding:2px;
+        color:#fff;
+        min-width:5%;
+        text-align:center;
+    }
+    
+    .convo-column img {
+        width:100px;
+        height:100px;
+        border-radius:50%;
+        float:left;
+        margin-right:10px;
+    }
+    
+    .messages-div {
+        background-color:#fafafa;
+        display:inline-block;
+        width:55.3%;
+        height:100%;
+        margin:0;
+        
+    }
+    
+    
+    .messages-div .messages_ {
+        padding:10px;
+        overflow-y:auto;
+        overflow-x:hidden;
+        height:90%;
+    }
+    
+    .messages-div .messages_ .messages-left {
+        display: inline-block;
+    	position: relative;
+    	background: #43a047 ;
+    	padding: 15px;
+    	color:#fff;
+    	border-radius:5px;
+    	margin-bottom:10px;
+    	margin-top:10px;
+    	float:left;
+
+    }
+    
+    .messages-div .messages_ .messages-left:after {
+        content: '';
+    	display: block;  
+    	position: absolute;
+    	right: 100%;
+    	top: 50%;
+    	margin-top: -10px;
+    	width: 0;
+    	height: 0;
+    	border-top: 10px solid transparent;
+    	border-right: 10px solid #43a047;
+    	border-bottom: 10px solid transparent;
+    	border-left: 10px solid transparent;
+    }
+    .messages-div .messages_ .messages-right {
+        display: inline-block;
+    	position: relative;
+    	background: orange ;
+    	padding: 15px;
+    	color:#fff;
+    	border-radius:5px;
+    	margin-top:10px;
+    	margin-bottom:40px;
+    	float:right;
+    }
+    
+    .messages-div .messages_ .messages-right:after {
+        content: '';
+    	display: block;  
+    	position: absolute;
+    	left: 100%;
+    	top: 50%;
+    	margin-top: -10px;
+    	width: 0;
+    	height: 0;
+    	border-top: 10px solid transparent;
+    	border-right: 10px solid transparent;
+    	border-bottom: 10px solid transparent;
+    	border-left: 10px solid orange;
+    }
+    
+    .convo-init-div {
+        background-color:#fff;
+        display:inline-block;
+        width:17%;
+        height:100%;
+        margin:0;
+        float:right;
+    }
+    
+    .new-message {
+      padding:10px;  
+      border-bottom:1px solid #f5f5f5 ;
+      text-align:center;
+    }
+   .send_message{
+       width:100%;
+       height:30px;
+       border: none;
+       outline:none;
+   }
+  
+</style>
+
+
+<div class="message-page">
+     <div class="message-convo-div">
+         <div class="message-convos">
+             <% allUsers.forEach(function(content){ %>
+            <a href="/message/<%=content._id%>" style="text-decoration:none;padding:20px;">
+                <div class="convo-column" >
+                  <img src="<%= content.photo%>"><br>
+                  <span><%= content.first_name%></span>
+            </div></a><br><br><br><br>
+            <% }); %>
+         </div>
+     </div>
+     <div class="messages-div">
+        <div class="messages_">
+            <% messagesFound.forEach(function(content){ %>
+               <% if(JSON.stringify(content.from) === JSON.stringify(user._id)) {%>
+                 <div class="messages-right">
+                    <span><%=content.message%></span>
+                 </div><br><br><br><br><br><br>
+               
+               <% } else {%>
+                <div class="messages-left">
+                    <span><%=content.message%></span>
+                </div><br><br><br><br><br><br>
+               <% } %>
+            <% }); %>
+        </div>
+          <% if(singleUser !== "newMessage"){ %>
+            <div class="send-message-div" style="min-width:100%;margin-top:5px;background-color:red;">
+               <input class="send_message" id="send_message" placeholder="Type Something">
+            </div>   
+          <% } %>
+     </div>
+     <div class="convo-init-div">
+         <!--<div class="new-message">-->
+         <!--    <button class="back_1" id="back_1"> <i class="fas fa-long-arrow-alt-left"></i> back</button>-->
+         <!--    <button id="new_messagebtn" class="new_messagebtn"><i class="far fa-comment"></i> New Message</button>-->
+         <!--</div>-->
+         <div style="padding:10px;text-align:center" >
+            <div class="connection_with_user" id="connection_with_user">
+                <% if(singleUser !== "newMessage"){ %>
+                    <% if(singleUser.length !== 0 ){ %>
+                        <h1>You</h1>
+                        <span><b>And</b></span><br><br>
+                        <img src="<%= singleUser[0].photo%>" 
+                        style="width:100px;height:100px;border-radius:50%;"><br>
+                        <a href="/"><%= singleUser[0].first_name%> </a>
+                   <% } %>
+                <% } %>
+            </div>
+           
+         </div>
+     </div>
+</div>
+
+
+
+<input type="hidden" value="<%= singleUser[0]._id%>" id="userTo" class="userTo">
+
+<!--<script src="/socket.io/socket.io.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+
+$(document).ready(function(){
+    function alphabet_order(str)
+      {
+        return str.split('').sort().join('');
+      }
+
+    
+    var socket = io();
+    var to_id = $("#userTo").val();
+    var from_id = $("#users_id").val();
+    
+    var room = alphabet_order(from_id + '/' + to_id);
+
+    
+    //listen to event from server
+    socket.on('connect', function(){
+        console.log("yea! User Connected");
+        //join users
+        socket.emit('join', room, function() {
+            console.log("User has joined");
+        });
+        
+    });
+   
+    
+    //listen to new message
+    socket.on('newMessage', function(data) {
+        // console.log(data);
+        // console.log(data.message);
+        if(data.from_id === from_id){
+            //append message
+            var message = '<div class="messages-right">';
+                message +='<span>'+ data.message +'</span>';
+                message +='</div><br><br><br><br><br><br>';
+                $(".messages_").append(message);
+        } else {
+            var message = '<div class="messages-left">';
+                message +='<span>'+ data.message +'</span>';
+                message +='</div><br><br><br><br><br><br>';
+                $(".messages_").append(message);
+        }
+        
+        //scroll to bottom
+        $('.messages_').scrollTop($('.messages_')[0].scrollHeight);
+
+        
+    });
+    
+    //comment on post
+$(document).on('keypress', ".send_message", function(event) {
+   if(event.which === 13 || event.keyCode === 13) {
+       //var post_id = $(this).attr("id");
+       var message = $('.send_message').val();
+       submitMessage(message);
+                       
+       return false;
+   } 
+   return true;
+});
+        
+function submitMessage(message){
+        
+        
+        
+        socket.emit('createMessage', {
+           message: message,
+           from_id: from_id,
+           to_id: to_id,
+           room: room
+        }, function() {
+            $("#send_message").val("");
+        });
+        
+        
+}
+
+
+
+       
+})
+</script>

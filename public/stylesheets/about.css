@@ -1,0 +1,142 @@
+body {
+    background-color: #2E2E2E!important;
+}
+
+.header {
+    background-color: #fff;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-top: 50px;
+    margin-left: 50px;
+}
+.header .logo {
+    display: inline-block;
+}
+
+.header .logo a {
+    font-family: 'Hind', sans-serif;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 0.1em;
+    font-size: 35px;
+    font-weight: bold;
+
+}
+
+.header .tagline {
+    font-size: 20px;
+    display: inline-block;
+    text-indent: 0;
+    line-height: 50px;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 0.1em;
+
+}
+
+
+
+.header .menu-items {
+    display: inline-block;
+    float: right;
+    padding: 15px;
+
+}
+
+.header  .menu-items a {
+    padding-right : 40px;
+    color: #000;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}
+.header  .menu-items a:hover {
+    color: #ef5350;
+    transition: 0.3s;
+    transform: uppercase;
+}
+
+
+
+
+.body {
+    background-color: #e3dfdb;
+    padding: 40px;
+    text-align: center;
+}
+
+.body .section1 h1 {
+    border-bottom: 1px solid #000;
+    width:16%;
+    margin:0 auto;
+    padding:5px;
+    letter-spacing: 0.1em;
+    font-family: 'Comfortaa', cursive;
+    color: #2E2E2E;
+
+}
+
+.body .section1 p {
+    width:50%;
+    margin:0 auto;
+    padding-top:25px;
+    letter-spacing: 0.1em;
+    font-family: 'Comfortaa', cursive;
+    color: #2E2E2E;
+
+}
+
+
+.body .section2 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: none;
+}
+
+.body .section3 {
+    background-color: red;
+    margin: auto;
+    max-width: 170vh;
+    padding: 40px;
+}
+
+
+
+.body .section3{
+    background-color: #fff;
+}
+
+.body .section3 h1 {
+    border-bottom: 1px solid #000;
+    width:16%;
+    margin:0 auto;
+    padding:5px;
+    letter-spacing: 0.1em;
+    font-family: 'Comfortaa', cursive;
+    color: #2E2E2E;
+
+}
+
+.body .section3 p {
+    padding-top:25px;
+    letter-spacing: 0.1em;
+    font-family: 'Comfortaa', cursive;
+    color: #2E2E2E;
+
+}
+
+.footer-color {
+    padding-left: 75px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #2E2E2E;
+}
+
+.footer-color a {
+    padding-right: 20px;
+    color:#fff;
+    text-decoration: none;
+}
+
+.footer-color a:hover {
+    color:#fff;
+    text-decoration: none;
+}

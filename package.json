@@ -1,0 +1,38 @@
+{
+  "name": "creativefashiongrid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.210.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "cloudinary": "^1.10.0",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.16.2",
+    "express-ejs-layouts": "^2.3.1",
+    "express-flash": "0.0.2",
+    "express-layout": "^0.1.0",
+    "express-session": "^1.15.6",
+    "formidable": "^1.2.0",
+    "method-override": "^2.3.10",
+    "mongoose-deep-populate": "^3.1.1",
+    "mongoose-paginate": "^5.0.3",
+    "multer": "^1.3.0",
+    "multer-s3": "^2.7.0",
+    "nodemailer": "^4.6.3",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^2.0.4"
+  }
+}

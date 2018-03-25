@@ -1,0 +1,61 @@
+body {
+    background-color: #efefef !important;
+}
+
+
+#login-container{
+      z-index: 1;
+      top: 8vh;
+      position: relative;
+      margin:0 auto;
+      width: 400px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 3px 4px 12px 0 rgba(0,0,0,0.17);
+
+
+}
+
+#login-container h5 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: #424242  ;
+    font-size: 23px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+#login-container .or{
+    font-family: 'Open Sans', sans-serif;
+    
+    color:#555;
+}
+
+#login-container .exf-text{
+    font-family: 'Open Sans', sans-serif;
+    color: #757575 ;
+}
+
+#login-container .bottom-container {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    
+}
+
+#login-container .bottom-container a {
+    color: #2E2E2E!important;
+    text-decoration: none;
+    
+}
+
+ /* begin social button styles*/
+
+
+/* ////end social button styles*/
+
+
+
+
+
+

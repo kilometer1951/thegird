@@ -1,0 +1,46 @@
+      
+      <style>
+          .feed_option:hover {
+              background-color:#e0e0e0;
+              border-radius:50%;
+          }
+      </style>
+      
+<div id="columns" class=".columns"></div>
+<div style="text-align:center;display:none;">
+    <img id="loading" src="https://m.popkey.co/fe4ba7/DYALX.gif" style="max-width:180px;">
+</div>
+<input value="<%= user._id%>" name="userLoggedinId" id="userLoggedinId" type="hidden">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<script>
+
+$(document).ready(function() {
+         
+
+        $('#loading').show();
+ 
+        //Original ajax request for loading first posts 
+     //check what page you are on
+        $.ajax({
+            url: "/infiniteScroll",
+            type: "POST",
+            cache:false,
+            success: function(data) {
+                data.forEach(function(content){
+                   // console.log(content.postedBy._id);
+                    var html = '';
+                   html += '<figure id="figure' + content._id + '"><img src="' + content.postImage + '" id="'+ content._id +'" class="uploaded_img">';
+                   html += ' </figure>';
+                   $("#columns").append(html);
+                   $('#loading').hide();
+                  // console.log(content);
+                });
+               
+            }
+        });
+    
+});
+</script>
