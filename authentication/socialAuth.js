@@ -25,7 +25,7 @@ passport.deserializeUser(function(id, next) {
 passport.use(new FacebookStrategy({
   clientID: config.facebookClientID,
   clientSecret: config.facebookClientSecret,
-  callbackURL: 'https://webdevbootcamp-kilometer.c9users.io/auth/facebook/callback',
+  callbackURL: 'https://thegrid93.herokuapp.com/auth/facebook/callback',
   profileFields: ['id', 'displayName', 'email', 'first_name', 'last_name']
 }, function(accessToken, refreshToken, profile, next) {
     Users.findOne({ email: profile._json.email }, function(err, user) {
@@ -53,7 +53,7 @@ passport.use(new FacebookStrategy({
 passport.use(new GoogleStrategy({
   clientID: config.googleClientID,
   clientSecret: config.googleClientSecert,
-  callbackURL: 'https://webdevbootcamp-kilometer.c9users.io/auth/google/callback',
+  callbackURL: 'https://thegrid93.herokuapp.com/auth/google/callback',
 }, function(accessToken, refreshToken, profile, next) {
     Users.findOne({ email: profile.emails[0].value }, function(err, user) {
       if (user) {
