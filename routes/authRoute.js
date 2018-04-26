@@ -17,7 +17,7 @@ router.get("/signup", function(req, res){
 
 //POST SIGNUP DATA TO DB
 router.post("/signup", function(req, res, next) {
-    // heck if user already exist
+    // check if user already exist
     Users.findOne({ email: req.body.email }, function(err, existingUser) {
         if(existingUser) {
             //if user exist redirect to login page
